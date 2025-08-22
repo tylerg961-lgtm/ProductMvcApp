@@ -1,0 +1,64 @@
+﻿@model List<ProductMvcApp.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (TempData["SearchMessage"] != null)
+{
+    <div class="alert alert-info">
+        @TempData["SearchMessage"]
+    </div>
+}
+
+<!-- Navigation using Tag Helper -->
+<nav aria-label="Product categories">
+    <ul class="nav nav-pills mb-4">
+        <li class="nav-item">
+            <a class="nav-link active" asp-controller="Product" asp-action="Index">All Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Electronics</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Kitchen</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Furniture</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Form using Tag Helper -->
+<form asp-controller="Product" asp-action="Search" method="post" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="searchTerm" class="form-control" placeholder="Search products..." />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Created Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price.ToString("C")</td>
+                <td>@product.Category</td>
+                <td>@product.CreatedDate.ToString("MM/dd/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
