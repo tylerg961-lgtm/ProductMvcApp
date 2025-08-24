@@ -31,4 +31,4 @@ A simple ASP.NET Core MVC application that demonstrates basic CRUD operations, T
 
 ## Screenshot
 
-![Product Listing](screenshot.png)
+![Product Listing Page](screenshot.png)
