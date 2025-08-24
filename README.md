@@ -31,4 +31,4 @@ A simple ASP.NET Core MVC application that demonstrates basic CRUD operations, T
 
 ## Screenshot
 
-![Product Listing Page](screenshot.png)
+![Product Listing Page](https://github.com/tylerg961-lgtm/ProductMvcApp/blob/master/screeenshot.png?raw=true)
